@@ -11,7 +11,11 @@ from datasy import *
 exit_commands = ['exit']
 
 def process(raw_command):
-    pass
+    try:
+        evaluation = eval(raw_command)
+        print(evaluation)
+    except:
+        print('Could not process \'' + raw_command + '\'')
 
 def main():
     print('Welcome to the datasy command line')
@@ -19,6 +23,7 @@ def main():
         raw_command = raw_input('>> ')
         if raw_command in exit_commands:
             break
+        process(raw_command)
 
 
 if __name__ == '__main__':

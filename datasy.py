@@ -1,5 +1,5 @@
 """
-This module provides various NLP data processing tools.
+This module provides various NLP data processing and representation tools.
 """
 
 from __future__ import print_function
@@ -9,15 +9,22 @@ import string
 
 class datasy:
     """
-    Converts the words in the data into word vectors.
+    Converts the words in the data into Glove word vectors.
     """
-    def conv_word_vectors(self, size=50):
+    def conv_glove_word_vectors(self, wv_path, size=50):
         pass
 
     """
     Converts the data into a bag of words representation.
     """
     def conv_bag_of_words(self):
+        #self.train_X = np.zeros((len(self.raw_train, self.vocab_size))
+        pass
+
+    """
+    Converts the data into a sparse vector representation.
+    """
+    def conv_sparse_vector(self):
         pass
 
     """
@@ -51,8 +58,6 @@ class datasy:
         #for example in data:
         #    removed = 
 
-
-
         data = nonstop
 
     """
@@ -79,12 +84,28 @@ class datasy:
         pass
 
     """
+    Given the split ratio, splits the training data into a training and dev set
+    """
+    def create_dev(self, split=10):
+        pass
+
+    """
     Builds the vocabulary for the data.
     """
     def build_vocab(self):
-        pass
 
+        # self.word_to_id = {}
+        # self.vocab_size = len(self.vocab)
+        pass
 
     def __init__(self, train_path=None, test_path=None):
-        pass
-        # if train_path is not None:
+        self.train_X = None
+        self.train_y = None
+        self.test_X = None
+        self.test_y = None
+
+        self.raw_train = []
+        if train_path is not None:
+            with open(train_path, 'r') as train_file:
+
+
