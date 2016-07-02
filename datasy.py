@@ -98,13 +98,29 @@ class datasy:
         # self.vocab_size = len(self.vocab)
         pass
 
-    def __init__(self, train_path=None, test_path=None):
+
+    """
+    Does data reading for file format 0.
+    """
+    def __read_file_format_0(self):
+        pass
+
+    # TODO: Support multiple file formats when reading in data
+    def __init__(self, train_path=None, dev_path=None, test_path=None, data_format=0):
         self.train_X = None
         self.train_y = None
+        self.dev_X = None
+        self.dev_y = None
         self.test_X = None
         self.test_y = None
 
-        self.raw_train = []
+        self.raw_train_X = []
+        self.raw_train_y = []
+        self.raw_dev_X = []
+        self.raw_dev_y = []
+        self.raw_test_X = []
+        self.raw_test_y = []
+
         if train_path is not None:
             with open(train_path, 'r') as train_file:
 
